@@ -21,6 +21,9 @@ export const PostsList = () => {
   }, [postStatus, dispatch])
 
   let content
+  
+  const users = useSelector(state => state.users)
+  console.log(">> ", users)
 
   if (postStatus === 'loading') {
     content = <Spinner text="Loading..." />
