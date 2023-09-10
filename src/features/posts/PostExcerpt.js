@@ -2,8 +2,9 @@ import { TimeAgo } from './TimeAgo'
 import { PostAuthor } from './PostAuthor'
 import { Link } from 'react-router-dom'
 import { ReactionButtons } from './ReactionButtons'
+import { memo } from 'react'
 
-export const PostExcerpt = ({ post }) => {
+export const PostExcerpt = memo(({ post }) => {
   return (
     <article className="post-excerpt">
       <h3>{post.title}</h3>
@@ -19,4 +20,4 @@ export const PostExcerpt = ({ post }) => {
       </Link>
     </article>
   )
-}
+})
