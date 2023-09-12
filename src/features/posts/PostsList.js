@@ -19,7 +19,7 @@ export const PostsList = () => {
   const postStatus = useSelector((state) => state.posts.status)
   const error = useSelector((state) => state.posts.error)
   // const posts = useSelector(selectAllPosts)
-
+  
   useEffect(() => {
     if (postStatus === 'idle') {
       dispatch(fetchPosts())
