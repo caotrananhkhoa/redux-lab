@@ -8,17 +8,26 @@ export const apiSlice = createApi({
   // All of our requests will have URLs starting with '/fakeApi'
   baseQuery: fetchBaseQuery({ baseUrl: '/fakeApi' }),
   // The "endpoints" represent operations and requests for this server
-  endpoints: builder => ({
+  endpoints: (builder) => ({
     // The `getPosts` endpoint is a "query" operation that returns data
     getPosts: builder.query({
       // The URL for the request is '/fakeApi/posts'
-      query: () => '/posts'
+      query: () => '/posts',
     }),
     getPost: builder.query({
-      query: (postId) => `/posts/${postId}`
-    })
-  })
+      query: (postId) => `/posts/${postId}`,
+    }),
+    addNewPost: builder.mutation({
+      query: (initialPost) => ({
+        url: '/posts',
+        method: 'POST',
+        // Include the entire post object as the body of the request
+        body: initialPost,
+      }),
+    }),
+  }),
 })
 
 // Export the auto-generated hook for the `getPosts` query endpoint
-export const { useGetPostsQuery, useGetPostQuery } = apiSlice
+export const { useGetPostsQuery, useGetPostQuery, useAddNewPostMutation } =
+  apiSlice
