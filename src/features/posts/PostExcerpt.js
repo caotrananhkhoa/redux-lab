@@ -3,8 +3,11 @@ import { PostAuthor } from './PostAuthor'
 import { Link } from 'react-router-dom'
 import { ReactionButtons } from './ReactionButtons'
 import { memo } from 'react'
+import { selectPostById } from './postsSlice'
+import { useSelector } from 'react-redux'
 
 export const PostExcerpt = memo(({ post }) => {
+  // const post = useSelector(state => selectPostById(state, postId))
   return (
     <article className="post-excerpt">
       <h3>{post.title}</h3>
