@@ -46,8 +46,6 @@ export const PostsList = () => {
 
   let content
 
-  const users = useSelector((state) => state.users)
-
   if (isLoading) {
     content = <Spinner text="Loading..." />
   } else if (isSuccess) {
