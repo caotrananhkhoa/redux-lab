@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { Spinner } from '../../components/Spinner'
-import { postAdded } from './postsSlice'
-import { addNewPost } from './postsSlice'
+// import { postAdded } from './postsSlice'
+// import { addNewPost } from './postsSlice'
 import { selectAllUsers } from '../users/usersSlice'
 import { useAddNewPostMutation } from '../api/apiSlice'
 

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { createSelector } from '@reduxjs/toolkit'
 import { useGetPostsQuery } from '../api/apiSlice'
 import { selectUserById } from './usersSlice'
-import { selectPostsByUser } from '../posts/postsSlice'
+// import { selectPostsByUser } from '../posts/postsSlice'
 
 export const UserPage = ({ match }) => {
   const { userId } = match.params

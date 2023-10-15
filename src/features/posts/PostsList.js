@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom'
 import { PostAuthor } from './PostAuthor'
 import { TimeAgo } from './TimeAgo'
 import { ReactionButtons } from './ReactionButtons'
-import {
-  selectAllPosts,
-  fetchPosts,
-  selectPostIds,
-  selectPostById,
-} from './postsSlice'
+// import {
+//   selectAllPosts,
+//   fetchPosts,
+//   selectPostIds,
+//   selectPostById,
+// } from './postsSlice'
 import { Spinner } from '../../components/Spinner'
 import { PostExcerpt } from './PostExcerpt'
 import { useGetPostsQuery } from '../api/apiSlice'

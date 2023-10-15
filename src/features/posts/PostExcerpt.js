@@ -3,7 +3,7 @@ import { PostAuthor } from './PostAuthor'
 import { Link } from 'react-router-dom'
 import { ReactionButtons } from './ReactionButtons'
 import { memo } from 'react'
-import { selectPostById } from './postsSlice'
+// import { selectPostById } from './postsSlice'
 import { useSelector } from 'react-redux'
 
 export const PostExcerpt = memo(({ post }) => {
