@@ -16,8 +16,6 @@ async function start() {
   await worker.start({ onUnhandledRequest: 'bypass' })
 
   // Fetch users
-  // store.dispatch(fetchUsers())
-  // store.dispatch(apiSlice.endpoints.getUsers.initiate())
   store.dispatch(extendedApiSlice.endpoints.getUsers.initiate())
 
   ReactDOM.render(
