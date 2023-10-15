@@ -34,8 +34,6 @@ export const AddPostForm = () => {
     }
   }
 
-  console.log("---------", users)
-
   const usersOptions = users.map(user => (
     <option key={user.id} value={user.id}>
       {user.name}

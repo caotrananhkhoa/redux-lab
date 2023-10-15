@@ -1,25 +1,43 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
+// import {
+//   fetchNotifications,
+//   selectAllNotifications
+// } from '../features/notifications/notificationsSlice'
+
 import {
-  fetchNotifications,
-  selectAllNotifications
+  fetchNotificationsWebsocket,
+  selectNotificationsMetadata,
+  useGetNotificationsQuery
 } from '../features/notifications/notificationsSlice'
 
 export const Navbar = () => {
   const dispatch = useDispatch()
-  const notifications = useSelector(selectAllNotifications)
-  const numUnreadNotifications = notifications.filter(n => !n.read).length
-  const fetchNewNotifications = () => {
-    dispatch(fetchNotifications())
-  }
+  // const notifications = useSelector(selectAllNotifications)
+  // const numUnreadNotifications = notifications.filter(n => !n.read).length
+  // const fetchNewNotifications = () => {
+  //   dispatch(fetchNotifications())
+  // }
 
-  // useEffect(() => {
-  //   const id = setInterval(() => {
-  //     dispatch(fetchNotifications())
-  //   }, 3000)
-  //   return () => clearInterval(id)
-  // }, [])
+  // // useEffect(() => {
+  // //   const id = setInterval(() => {
+  // //     dispatch(fetchNotifications())
+  // //   }, 3000)
+  // //   return () => clearInterval(id)
+  // // }, [])
+  
+  // Trigger initial fetch of notifications and keep the websocket open to receive updates
+  useGetNotificationsQuery()
+
+  const notificationsMetadata = useSelector(selectNotificationsMetadata)
+  const numUnreadNotifications = notificationsMetadata.filter(
+    n => !n.read
+  ).length
+
+  const fetchNewNotifications = () => {
+    dispatch(fetchNotificationsWebsocket())
+  }
 
   let unreadNotificationsBadge
 
